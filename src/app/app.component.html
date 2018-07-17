@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="page-header">
+                <h1 class="text-center p-5 text-secondary"> Avenida Timeline 2018</h1>
+            </div>
+            <div style="display:inline-block;width:100%;">
+                <ul class="timeline timeline-horizontal">
+                    <li *ngFor="let mes of meses; let i = index" [attr.data-index]="i" class="timeline-item">
+
+                        <div class=" rounded timeline-badge primary position-absolute">{{mes}}</div>
+                        <div *ngFor="let feriado of feriados;">
+                            <div *ngIf="feriado.mes==i+1">
+                                <div class=" bg-light timeline-panel">
+                                    <div>
+                                        <h6 class="timeline-title">{{feriado.motivo}}</h6>
+                                        <p><small class="text-muted "> {{feriado.dia}}/{{feriado.mes}}</small></p>
+                                    </div>
+                                    <div class="timeline-body ">
+                                        <p>{{feriado.tipo}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</div>
